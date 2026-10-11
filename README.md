@@ -10,7 +10,7 @@ Buradaki amaç, insanları hekleme (hacking), elektronik ve Arduino dünyasına 
 
 ## Hakkında
 
-![network scanner](https://github.com/Tnze/esp32_beaconSpam/raw/master/img/networkscanner.png)
+![network scanner](https://raw.githubusercontent.com/Luness02/esp32-beacon-luness02/refs/heads/main/img/networkscanner.png)
 
 Bu Arduino projesi (sketch) varsayılan olarak 50 farklı SSID (ağ adı) ile gelir, ancak kaynak kod içinden bu listeyi kolayca düzenleyebilirsiniz :).  
 Cihaz, "Beacon Frame" (işaretçi çerçevesi) olarak adlandırılan paketleri sürekli olarak yayınlayarak standart Wi-Fi tarayıcılarının yakında aktif ağlar olduğunu düşünmesini ve bunları listeye eklemesini sağlar.  
