@@ -1,44 +1,42 @@
 # ESP32 Beacon Spam
 
+## Değişiklikler
 
-## Changes
+Bu kodu 25.09.2018 tarihinde uyarladım:
+- ESP32 altyapısına aktarıldı.
 
-I transplant this code at 2018.09.25
-- Transplant to based on ESP32
+Bile bile bir `.bin` dosyası yayınlamadım. Bu projeyi Arduino ile hazırlamak çok kolay ve herkes çalışır hale getirebilmeli!  
+Buradaki amaç, insanları hekleme (hacking), elektronik ve Arduino dünyasına adım atmaya teşvik etmektir; bu yüzden üşenmeyin ve kendi projelerinizi yapmaya başlayın! :D
 
-I didn't publish a .bin file on purpose. This project is easy to create with Arduino and everyone should be able to get it working!  
-The goal of this is to motivate people to get into hacking, electronics and Arduino, so don't be lazy and start making your own stuff! :D
-
-## About
+## Hakkında
 
 ![network scanner](https://github.com/Tnze/esp32_beaconSpam/raw/master/img/networkscanner.png)
 
-The Arduino sketch comes with 50 default SSID names, but you can edit that list easily in the source code :).  
-By constantly broadcasting the so called beacon frames, your standard WiFi scanner will think there are active networks nearby and adds them to the list.  
-In reality though, it is just advertising these network names without actually creating them. So there is no way you could connect to one of the "created" networks.  
+Bu Arduino projesi (sketch) varsayılan olarak 50 farklı SSID (ağ adı) ile gelir, ancak kaynak kod içinden bu listeyi kolayca düzenleyebilirsiniz :).  
+Cihaz, "Beacon Frame" (işaretçi çerçevesi) olarak adlandırılan paketleri sürekli olarak yayınlayarak standart Wi-Fi tarayıcılarının yakında aktif ağlar olduğunu düşünmesini ve bunları listeye eklemesini sağlar.  
+Ancak gerçekte, sadece bu ağ isimlerinin reklamını yapar; aslında gerçek bir ağ oluşturmaz. Bu yüzden "oluşturulan" bu ağlardan hiçbirine bağlanmak mümkün değildir.  
 
-It is using the `esp_wifi_80211_tx` function in the ESP32 Arduino Core SDK. This function allows packet injection for specific Wi-Fi frames.  
+Sistem, ESP32 Arduino Core SDK içerisinde yer alan `esp_wifi_80211_tx` fonksiyonunu kullanır. Bu fonksiyon, belirli Wi-Fi çerçeveleri için paket enjeksiyonu (packet injection) yapılmasına olanak tanır.
 
-## Disclaimer
+## Sorumluluk Reddi (Disclaimer)
 
-Even if it is more of a fun party trick than something that could actually do any harm, **please use it respectively!**
-Some people might interpret that as a "Jammer" and those are illegal. But this porject here is just sending a bunch of WiFi packets through the air and works within the 802.11 Wi-Fi standard.
+Gerçek bir zarara yol açabilecek bir şeyden ziyade eğlenceli bir şaka projesi olsa da, **lütfen bunu sorumluluk bilinciyle kullanın!**  
+Bazı insanlar bunu bir "Sinyal Kesici (Jammer)" olarak yorumlayabilir ve jammer cihazları yasa dışıdır. Fakat bu proje yalnızca havaya bir dizi Wi-Fi paketi gönderir ve 802.11 Wi-Fi standartları dahilinde çalışır.
 
-## Installation
+## Kurulum
 
-- First get an ESP32 development board! 
-- Install [Arduino](https://www.arduino.cc/en/Main/software)
-- Install the [ESP32 Arduino Core](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) 
-- Clone this project
-- Edit the SSIDs if you want
-- Select the correct Board under Tools > Board, the serial (COM) port your device is using and hit upload!
+- İlk olarak bir ESP32 geliştirme kartı edinin! 
+- [Arduino IDE](https://www.arduino.cc/en/Main/software) yazılımını kurun.
+- [ESP32 Arduino Core](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) paketini yükleyin.
+- Bu projeyi klonlayın (veya indirin).
+- İsterseniz kod içindeki SSID (ağ) isimlerini düzenleyin.
+- Araçlar > Kart menüsünden doğru kartı ve cihazınızın bağlı olduğu seri (COM) portu seçip yükle (upload) butonuna basın!
 
+## Lisans
 
-## License
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [lisans dosyasına](LICENSE) göz atabilirsiniz.
 
-This project is licensed under the MIT License - see the [license file](LICENSE) file for details
+## Kaynaklar
 
-## Sources
- 
-The 50 default SSIDs are from: http://www.makeuseof.com/tag/50-funny-wi-fi-names-network-ssid/  
-More infos about beacon frames: https://mrncciew.com/2014/10/08/802-11-mgmt-beacon-frame/  
+Varsayılan 50 SSID buradaki listeden alınmıştır: http://www.makeuseof.com/tag/50-funny-wi-fi-names-network-ssid/  
+Beacon çerçeveleri hakkında daha fazla bilgi için: https://mrncciew.com/2014/10/08/802-11-mgmt-beacon-frame/
